@@ -1,0 +1,123 @@
+/*TOP MENU*/
+.menu-bar {
+    position: relative;
+    margin: 66px 0 134px 0;
+    font-family: league_gothicregular, sans-serif;
+}
+
+.menu-bar:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/*LOGO*/
+.menu-bar__logo {
+    float: left;
+    line-height: 4.8rem;
+    font-size: 4.8rem;
+    letter-spacing: -0.04rem;
+}
+
+.menu-bar__logo div {
+    display: inline-block;
+}
+
+.logo__first-part {
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px;
+}
+
+.logo__second-part {
+    color: #000; /*закрашиваем самым темным - черным*/
+    background: rgba(255, 255, 255, 1); /*под буквами самый светлый - белый*/
+    mix-blend-mode: lighten; /*оставляем самое светлое. черное - отсекаем (делаем прозрачным). Получили дырку*/
+}
+
+.logo__second-part-back {
+    margin: 0 0 0 -0.8rem;
+    line-height: 3.8rem; /*сужаем, чтобы охватить весь диапозон градиента*/
+    background: linear-gradient(to bottom, #745083, #33263a); /*под дыркой будет виден градиент*/
+    mix-blend-mode: darken; /*фон у нас светлее букв, но темнее белого фона (в котором дырка) - поэтому отсекаем все светлее фона*/
+}
+
+/*MENU*/
+
+/*general*/
+.menu-bar__item {
+    font-size: 2.4rem;
+    text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.menu-bar__item:hover {
+    border-bottom: 2px solid #edbfff;
+}
+
+.menu-bar__item a {
+    color: white;
+    text-decoration: none;
+}
+
+/*right*/
+.menu-bar__right-aligned-top-menu {
+    position: absolute;
+    width: 100%;
+    left:0;
+    right: 0;
+    margin: 0.7rem 0 0 0;
+}
+
+.menu-bar__right-aligned-item {
+    float: right;
+    padding: 0 1% 0.2rem 1%;
+    margin: 0 0 0 3.34%;
+}
+
+.menu-bar__right-aligned-item:first-child {
+    padding: 0 0 0 1%;
+}
+
+/*left*/
+.menu-bar__left-aligned-top-menu{
+    float: left;
+    width: 100%;
+    margin: 0.7rem 0 0 0;
+}
+
+.menu-bar__left-aligned-item {
+    float: left;
+    padding: 0 1% 0.2rem 1%;
+    margin: 0 3.34% 0 0;
+}
+
+.menu-bar__left-aligned-item:first-child {
+    padding: 0 1% 0 0;
+}
+
+/*center*/
+
+.menu-bar__center-aligned-items-list {
+    width: auto;
+}
+
+.menu-bar__center-aligned-top-menu{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin: 1rem 0 0 0;
+    width: 100%;
+}
+
+.menu-bar__center-aligned-item-wrapper {
+    text-align: center;
+    height: 3rem;
+}
+.menu-bar__center-aligned-item {
+    display: inline-block; /*for dropdown menu realization*/
+    color: white;
+    padding: 0 10% 0.2rem 10%;
+    text-decoration: none;
+    white-space: nowrap;
+}
+

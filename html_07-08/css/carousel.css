@@ -1,0 +1,381 @@
+/*CAROUSEL*/
+
+.carousel-container{
+    /*z-index: 0; !*for ability to top-shift navi block*!*/
+}
+
+.carousel {
+    width: 100%;
+    position: relative;
+    z-index: 0; /*for ability to top-shift navi block*/
+}
+
+.carousel__container {
+    overflow: hidden;
+}
+
+.carousel__slide-place {
+    position: relative;
+    margin: 30px 0 90px 0;
+    display: flex;
+!important;
+    flex-flow: row;
+!important;
+    flex-wrap: nowrap;
+!important;
+    transition: all ease-in-out;
+    transition-duration: 1s;
+    z-index: -1; /*for ability to top-shift navi block*/
+}
+
+.carousel__slide-block {
+    width: 100%;
+    flex-shrink: 0;
+    float: left;
+    /*border: 1px solid yellow;*/
+    /*box-sizing: border-box;*/
+
+    /*here*/
+    height: 430px; /*430 = 400 + 30. 30 is the place for ability top-shift image*/
+    margin-top: -30px; /*the place for ability top-shift of image placed in img-side*/
+    overflow: hidden; /*it's needed for extreme shrink of the window*/
+}
+
+.carousel__text-side {
+    float: left;
+    position: relative;
+    width: 50%;
+    line-height: 400px; /*for vertical-align: middle; of text-container*/
+    overflow: hidden;
+    /*border: 1px solid green;*/
+    /*box-sizing: border-box;*/
+
+    /*here*/
+    margin-top: 30px; /*compensation of .carousel__slide-block margin-top: -30px*/
+}
+
+.carousel__text-container {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.carousel__text-container header h1 {
+    margin: -1.2rem 0 -1.0rem 0;
+    font-size: 6rem;
+    font-family: league_gothicregular, Arial sans-serif;
+    color: #fefefe;
+    letter-spacing: -0.03rem;
+}
+
+.carousel__text-container header h2 {
+    font-size: 3.2rem;
+    font-family: league_gothicregular, Arial sans-serif;
+    color: #edbfff;
+    letter-spacing: 0;
+    margin: 0 0 0.1rem 0;
+}
+
+.carousel__text-container div {
+    font-size: 1.8rem;
+    font-family: OpenSans-light, Arial sans-serif;
+    color: #ffffff;
+    letter-spacing: -0.04rem;
+    line-height: 1.35;
+}
+
+.carousel__img-side {
+    float: right;
+    position: relative;
+    width: 43%;
+    /*border: 1px solid blue;*/
+    /*box-sizing: border-box;*/
+
+    /*here*/
+    margin-top: 30px; /*compensation of .carousel__slide-block margin-top: -30px*/
+}
+
+#phone-img-1,
+#phone-img-2,
+#phone-img-3,
+#phone-img-4 {
+    margin: -17px 4px 0 0; /*limit of top-shifting is 30px*/
+    text-align: center;
+}
+
+#play-img-1,
+#play-img-2,
+#play-img-3,
+#play-img-4 {
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    left: 72px;
+    top: 0;
+    right: 0;
+    bottom: 58px;
+    margin: auto;
+}
+
+/*NAVI*/
+
+.carousel__hidden-radio {
+    display: none;
+}
+
+.carousel__navi-block {
+    float: right;
+    width: 43%;
+    /*border: 1px solid blue;*/
+    /*box-sizing: border-box;*/
+}
+
+.carousel__navi-label-place {
+    text-align: center;
+}
+
+.carousel__navi-label {
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    background: url("../img/navi.png") no-repeat 0 0;
+}
+
+#p1:checked ~ .carousel__navi-block .carousel__navi-label:nth-child(1),
+#p2:checked ~ .carousel__navi-block .carousel__navi-label:nth-child(2),
+#p3:checked ~ .carousel__navi-block .carousel__navi-label:nth-child(3),
+#p4:checked ~ .carousel__navi-block .carousel__navi-label:nth-child(4) {
+    background: url("../img/navi.png") no-repeat 0 -17px;
+}
+
+/*event for 1 navi button*/
+#p1:checked ~ .carousel__slide-place {
+    margin-left: 0;
+}
+
+#p1:checked ~ .carousel__outer-padding .carousel__right-arrow.for-slide-2,
+#p1:checked ~ .carousel__outer-padding .carousel__left-arrow.for-slide-4 {
+    display: block;
+}
+
+/*event for 2 navi button*/
+#p2:checked ~ .carousel__slide-place {
+    margin-left: -100%;
+    margin-right: 100%;
+}
+
+#p2:checked ~ .carousel__outer-padding .carousel__right-arrow.for-slide-3,
+#p2:checked ~ .carousel__outer-padding .carousel__left-arrow.for-slide-1 {
+    display: block;
+}
+
+/*event for 3 navi button*/
+#p3:checked ~ .carousel__slide-place {
+    margin-left: -200%;
+    margin-right: 200%;
+}
+
+#p3:checked ~ .carousel__outer-padding .carousel__right-arrow.for-slide-4,
+#p3:checked ~ .carousel__outer-padding .carousel__left-arrow.for-slide-2 {
+    display: block;
+}
+
+/*event for 4 navi button*/
+#p4:checked ~ .carousel__slide-place {
+    margin-left: -300%;
+    margin-right: 300%;
+}
+
+#p4:checked ~ .carousel__outer-padding .carousel__right-arrow.for-slide-1,
+#p4:checked ~ .carousel__outer-padding .carousel__left-arrow.for-slide-3 {
+    display: block;
+}
+
+.carousel__outer-padding {
+    position: absolute;
+    left: -12.5%;
+    margin: 30px 0 0 0;
+    width: 125%;
+    height: 400px;
+    z-index: -1; /*for ability to top-shift navi block*/
+    /*border: 1px solid magenta;*/
+    /*box-sizing: border-box;*/
+}
+
+.carousel__right-arrow-container {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    right: 0;
+    /*border: 1px solid green;*/
+    /*box-sizing: border-box;*/
+}
+
+.carousel__right-arrow {
+    position: absolute;
+    height: 42px;
+    width: 30px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: url("../img/arrows.png") no-repeat -28px 0;
+}
+
+.carousel__left-arrow-container {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    left: 0;
+    /*border: 1px solid green;*/
+    /*box-sizing: border-box;*/
+}
+
+.carousel__left-arrow {
+    position: absolute;
+    height: 42px;
+    width: 30px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: url("../img/arrows.png") no-repeat 0 0;
+}
+
+.carousel__left-arrow,
+.carousel__right-arrow {
+    display: none;
+}
+
+/*STRIP*/
+.carousel__strip {
+    position: absolute;
+    top: 0;
+    left: -175%;
+    right: -175%;
+    bottom: 0;
+    height: 400px;
+    margin: 30px 0 0 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -2; /*for ability to top-shift navi block*/
+}
+
+/*MODIFICATIONS ======================================================*/
+/*CAROUSEL IN MAIN ===================================================*/
+
+.carousel__slide-place--testimonials {
+    margin: 0 0 0 0;
+}
+
+.carousel__slide-block--testimonials {
+    height: 325px;
+}
+
+.carousel__full-frame {
+    position: relative;
+    width: 100%;
+    line-height: 295px;
+    overflow: hidden;
+
+    /*here*/
+    margin-top: 30px; /*compensation of .carousel__slide-block margin-top: -30px*/
+
+    /*border: 1px solid yellow;*/
+    /*box-sizing: border-box;*/
+}
+
+.carousel__text-container--testimonials {
+    position: relative;
+    height: 295px;
+    padding: 0 2.3rem 0 63px;
+    z-index: 0;
+    line-height: 1.5;
+}
+
+.carousel__text-container--testimonials header h1 {
+    font-family: league_gothicregular, Arial sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #454545;
+    margin: 2.2rem 0 0.1rem 0;
+}
+
+.carousel__text-container--testimonials header span {
+    font-family: league_gothicregular, Arial sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #edbfff;
+}
+
+.carousel__text-container--testimonials div {
+    font-family: OpenSans-light, Arial sans-serif;
+    font-size: 1.6rem;
+    color: #454545;
+    height: 170px;
+    overflow: hidden;
+    letter-spacing: -0.02rem;
+    padding: 0 1rem 0 0;
+    line-height: 1.5;
+}
+
+.carousel__text-container--testimonials .baloon {
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    left: 20px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+.carousel__text-container--testimonials .photo {
+    position: absolute;
+    left: 0;
+    top: 1.8rem;
+    margin: auto;
+    z-index: -1;
+}
+
+.carousel__navi-block--testimonials {
+    width: 95%;
+    margin: 0 0 0 0;
+}
+
+.carousel__navi-label--testimonials {
+    background: url("../img/navi-testimonials.png") no-repeat 0 0;
+}
+
+#tp1:checked ~ .carousel__navi-block .carousel__navi-label:nth-child(1),
+#tp2:checked ~ .carousel__navi-block .carousel__navi-label:nth-child(2),
+#tp3:checked ~ .carousel__navi-block .carousel__navi-label:nth-child(3),
+#tp4:checked ~ .carousel__navi-block .carousel__navi-label:nth-child(4) {
+    background: url("../img/navi-testimonials.png") no-repeat 0 -20px;
+}
+
+/*event for 1 navi button*/
+#tp1:checked ~ .carousel__slide-place {
+    margin-left: 0;
+}
+
+/*event for 2 navi button*/
+#tp2:checked ~ .carousel__slide-place {
+    margin-left: -100%;
+    margin-right: 100%;
+}
+
+/*event for 3 navi button*/
+#tp3:checked ~ .carousel__slide-place {
+    margin-left: -200%;
+    margin-right: 200%;
+}
+
+/*event for 4 navi button*/
+#tp4:checked ~ .carousel__slide-place {
+    margin-left: -300%;
+    margin-right: 300%;
+}
+
