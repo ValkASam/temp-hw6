@@ -1,6 +1,6 @@
 @media (max-width: 320px) {
     html {
-        background: url("../img/background320.png") no-repeat 50% top;
+        background: url("../img/background320full.png") no-repeat 50% top;
     }
 
     .page {
@@ -53,6 +53,7 @@
     .carousel__img-side {
         visibility: hidden;
         position: absolute;
+        left: -99999px;
     }
 
     .carousel__navi-block {
@@ -89,8 +90,9 @@
     }
 
     .carousel--testimonials {
-        width: 100%;
+        width: 94%;
         padding-left: 6%;
+        padding-right: 0;
     }
 
     .carousel__slide-place--testimonials {
@@ -134,6 +136,10 @@
         left: 20px;
     }
 
+    .carousel__navi-block--testimonials {
+        width: 94%;
+    }
+
     /*from-blog redraw*/
     .blurb-block__right-side--from-blog {
         width: 100%;
@@ -159,6 +165,8 @@
         margin-left: 20px;
         margin-right: 20px;
         margin-bottom: 233px;
+
+        height: 122px;
     }
 
     .trade-mark-list-item {
@@ -166,19 +174,37 @@
     }
 
     /*fotter redraw*/
+
+    footer {
+        background: none;
+    }
+
     .blurb-container--footer-768 {
         position: absolute;
         visibility: hidden;
+        left: -99999px;
     }
 
     /*bottom-menu redraw*/
     .bottom-menu-bar {
         margin: 0 0 0 0;
+
+        height: 202px;
+        padding-top: 0;
+        background: inherit;
     }
+
+    /*margin: 80px 0 86px 0;*/
+
+    /*margin: 33px 0 0 0;
+    height: 202px;
+    padding-top: 47px;
+    background: url("../img/background480-bottom.png") no-repeat 50% top;*/
 
     .bottom-menu-bar__bottom-menu {
         position: absolute;
         visibility: hidden;
+        left: -99999px;
     }
 
 }
